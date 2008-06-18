@@ -1,6 +1,11 @@
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<style>
+	{literal}
+	body{font-size:12px;font-family:Trebuchet MS;color:#444444}}
+	{/literal}
+</style>
 
             <script type="text/javascript" src="adres.js"></script>
         </head>
@@ -34,7 +39,7 @@
                     </tr>
                     <tr>
                         <td>
-                            Ä°l
+                            Ýl
                         </td>
                         <td>
                             <select name="il" style="width:150px">
@@ -44,7 +49,7 @@
                     </tr>
                     <tr>
                         <td>
-                            Ä°lÃ§e
+                            Ýlçee
                         </td>
                         <td>
                             <select name="ilce" style="width:150px">
@@ -59,7 +64,7 @@
                     </tr>
                     <tr>
                         <td>
-                            IsÄ±tma Tipi
+                            Isýtma Tipi
                         </td>
                         <td>
                             {html_options name=isitmatipi options=$isitma}
@@ -67,24 +72,18 @@
                     </tr>
                     <tr>
                         <td>
-                            IsÄ±tma Tipi
+                            Ayrýntýlar
                         </td>
-                        <td>
-                            <table cellpadding="0" cellspacing="0">
-                                {foreach from=$ayrintilar key=k item=v}
-                                <tr>
-                                    <td>
-                                        <input type="checkbox" name="detay{$k}" value="{$k}">{$v}
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" name="detay{$k}" value="{$k}">{$v}
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" name="detay{$k}" value="{$k}">{$v}
-                                    </td>
-                                </tr>
-                                {/foreach}
-                            </table>
+			<td>
+				<table border=1>
+					{section name=oi loop=$ayrintilar}
+					{if $smarty.section.oi.index % 3 == 0}<tr>{/if}
+						<td width=252>
+							<input type="checkbox" name="ozellik{$smarty.section.oi.index}" value={$smarty.section.oi.index}>{$ayrintilar[oi]}
+						</td>
+						{if $smarty.section.oi.index % 3 == 2}</tr>{/if}
+					{/section}
+				</table> 
                         </td>
                     </tr>
 

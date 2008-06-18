@@ -12,6 +12,6 @@ $smarty->assign('emlak_tipleri', array(
     'Villa',
     'Arsa'));
 $smarty->assign('emlak_tablo', array('konut','isyeri','villa','arsa'));
-$smarty->assign('emlak_sec', 'konut'));
+$smarty->assign('emlak_sec', 'konut');
 $smarty->display('emlakekleadim1.html');
 ?> 
