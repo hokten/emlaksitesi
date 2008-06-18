@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="tr">
+<head>
+	<title>Adres</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<script type="text/javascript" src="adres.js"></script>
+	<style type="text/css">
+		body   { font: normal 11px Arial, Times, sans-serif; }
+		select { margin-bottom: 3px; height: 20px; }
+	</style>
+</head>
+<body>
+	<h3>Seçimli<h3>
+	<form name="form_1" action="" method="post">
+		<select name="ulke" style="width:150px"><option></option></select><br/>
+		<select name="il" style="width:150px"><option></option></select><br/>
+		<select name="ilce" style="width:150px"><option></option></select><br/>
+		<select name="semt" style="width:150px"><option></option></select>
+	</form>
+	<script type="text/javascript">
+		var mform_1 = new Form('form_1');
+		var adres_1 = mform_1.adres('ulke','il','ilce','semt');
+		adres_1.secim = 'evet';
+		adres_1.getir('','','','');
+	</script>
+	
+	<h3>Zorunlu<h3>
+	<form name="form_2" action="" method="post">
+		<select name="ulke" style="width:150px"><option></option></select><br/>
+		<select name="il" style="width:150px"><option></option></select><br/>
+		<select name="ilce" style="width:150px"><option></option></select><br/>
+		<select name="semt" style="width:150px"><option></option></select>
+	</form>
+	<script type="text/javascript">
+		var mform_2 = new Form('form_2');
+		var adres_2 = mform_2.adres('ulke','il','ilce','semt');		
+		adres_2.getir('208','41','497','2576');
+	</script>	
+	
+	<h3>İl, İlçe ve Semt<h3>
+	<form name="form_3" action="" method="post">		
+		<select name="il" style="width:150px"><option></option></select><br/>
+		<select name="ilce" style="width:150px"><option></option></select><br/>
+		<select name="semt" style="width:150px"><option></option></select>
+	</form>
+	<script type="text/javascript">
+		var mform_3 = new Form('form_3');
+		var adres_3 = mform_3.adres('','il','ilce','semt');		
+		adres_3.secim = 'evet';
+		adres_3.getir('','41','497','2576');
+	</script>		
+	
+	<h3>Yalnızca İl ve İlçe<h3>
+	<form name="form_4" action="" method="post">		
+		<select name="il" style="width:150px"><option></option></select><br/>
+		<select name="ilce" style="width:150px"><option></option></select><br/>		
+	</form>
+	<script type="text/javascript">
+		var mform_4 = new Form('form_4');
+		var adres_4 = mform_4.adres('','il','ilce','');		
+		adres_4.getir('','41','497','');
+	</script>		
+</body>
+</html>
